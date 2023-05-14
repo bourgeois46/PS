@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void selectionSort(int *A, int n) {//배열, 배열 크기
+void selectionSort(int *A, int n) {
 	int i, j, temp;
 
 	for (i = 0; i < n-1 ; i++) {
