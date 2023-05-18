@@ -3,6 +3,7 @@
 int get_cycle_number(int n) {
 	
 	printf("%d ", n);//수열 출력
+	
 	//수열의 길이를 리턴
 	if (n == 1)
 		return 1;
