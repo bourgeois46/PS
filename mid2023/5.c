@@ -57,8 +57,7 @@ int main() {
 
 	for (int i = 0; i < N; i++) //정수 배열 값 입력
         scanf("%d", &A[i]);
-
-    global_sum = INT_MIN;
+	
     pick(sign, 3, picked, N, N, A, N, &max);
 
     printf("%d", max);
