@@ -23,10 +23,8 @@ void bubbleSort(int* A, int n) {
 int main() {
 	int n, i;
 	int* A;
-	
-	srand(time(NULL));
+
 	scanf("%d", &n);
-	
 	if (n <= 0)
 		return 0;
 
@@ -35,6 +33,7 @@ int main() {
 	if (n = NULL)
 		return 0;
 
+	srand(time(NULL));
 	for (i = 0; i < n; i++) {//정렬 전
 		A[i] = rand() % 1000;
 		printf("%d ", A[i]);
