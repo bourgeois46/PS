@@ -1,16 +1,20 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-#include <stdlib.h> // rand, srand
-#include <time.h> // time
+#include <stdlib.h> 
+#include <time.h> 
+
+// 삽입 위치 찾기 & 삽입 위치 이후로 다 뒤로 한칸씩 이동
+// 첫 번째 원소는 정렬되었다고 가정
 
 void insertionSort(int* A, int n) {
     int i, j,tmp, k;
 
     for (i = 1; i < n; i++) {
-        //A[i] 위치에 삽입됨
+        //A[j] 위치에 삽입됨
         for (j = 0; j < i; j++)
             if (A[i] > A[j])
                 break;
+        
         //j는 A[i]의 인덱스
         tmp = A[i];
         
