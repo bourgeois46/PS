@@ -4,24 +4,31 @@
 #include <time.h>
 void bubbleSort(int* A, int n) {
 	int i, j, temp;
+	
 	/*i = 0 n-1 회 버블
 	* i = 1 n-2 회 버블
 	* i = 2 n-3 회 버블
 	*/
-	for (i = 0; i < n-1; i--) 
+	
+	for (i = 0; i < n-1; i++) 
 		for (j = 0; j <= n-i-1; j++)
-			if (A[j] > A[j + 1]) {//큰 것과 자기 자신 자리 바꿈
+			if (A[j] > A[j + 1]) {
 				temp = A[j];
 				A[j] = A[j + 1];
 				A[j + 1] = temp;
 			}
 
 }
+
 int main() {
 	int n, i;
 	int* A;
-
+	
+	srand(time(NULL));
 	scanf("%d", &n);
+	
+	if (n <= 0)
+		return 0;
 
 	A = (int*)malloc(sizeof(int) * n);
 
