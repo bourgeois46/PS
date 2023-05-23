@@ -12,7 +12,7 @@ void selectionSort(int *A, int n) {
 	for (i = 0; i < n-1 ; i++) {
 		int max_idx = 0;
 		//max 제외
-		for (j = 1; j < n - i; j++) 
+		for (j = 1; j < n - i; j++) // 범위 1씩 감소
 			//max 2번째 값부터 비교,  j = 1 부터
 			if (A[max_idx] < A[j])//내림차순
 				max_idx = j;
