@@ -9,7 +9,7 @@
 void insertionSort(int* A, int n) {
     int i, j,tmp, k;
 
-    for (i = 1; i < n; i++) {
+    for (i = 1; i < n; i++) { // 첫 번째 원소 정렬되었으므로 제외하고 시작
         //A[j] 위치에 삽입됨
         for (j = 0; j < i; j++)
             if (A[i] > A[j])
