@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 void bubbleSort(int* A, int n) {
 	int i, j, temp;
 	
@@ -10,9 +11,9 @@ void bubbleSort(int* A, int n) {
 	* i = 2 n-3 회 버블
 	*/
 	
-	for (i = 0; i < n-1; i++) 
-		for (j = 0; j <= n-i-1; j++)
-			if (A[j] > A[j + 1]) {
+	for (i = 0; i < n-1; i++) // 총 n-1 회 버블
+		for (j = 0; j <= n-i-1; j++) // 범위 1씩 감소
+			if (A[j] > A[j + 1]) { 
 				temp = A[j];
 				A[j] = A[j + 1];
 				A[j + 1] = temp;
