@@ -20,7 +20,7 @@ void swap(int *A, int i, int j) {
 	A[i] = temp;
 }
 
-int partition(int A[], int p, int r) { //퀵 정렬의 partition
+int partition(int* A, int p, int r) { //퀵 정렬의 partition
 	int i = p - 1;
 	int j = p;
 	int pivot = A[r];
