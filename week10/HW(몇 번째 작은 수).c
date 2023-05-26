@@ -14,7 +14,7 @@ void print_array(int* A, int n) {
 		printf("%d ", A[i]);
 }
 
-void swap(int A[], int i, int j) {
+void swap(int *A, int i, int j) {
 	int temp = A[j];
 	A[j] = A[i];
 	A[i] = temp;
