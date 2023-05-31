@@ -15,8 +15,8 @@ int main() {
 
 	A = (int*)malloc(sizeof(int) * n);
 
-	/*if (p = NULL)
-		return 0;*/
+	if (A = NULL)
+		return 0;
 
 	for (i = 0; i < n; i++) {//난수값 넣어주고 출력
 		A[i] = rand()%1000;//rand()
