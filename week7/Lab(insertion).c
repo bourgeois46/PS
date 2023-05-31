@@ -12,7 +12,7 @@ void insertionSort(int* A, int n) {
     for (i = 1; i < n; i++) { // 첫 번째 원소 정렬되었으므로 제외하고 시작
         //A[j] 위치에 삽입됨
         for (j = 0; j < i; j++)
-            if (A[i] > A[j])
+            if (A[j] > A[i])
                 break;
         
         //j는 A[i]의 인덱스
