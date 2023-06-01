@@ -11,8 +11,8 @@ void readMatrix(int** a, int r, int c) {
 
 int** matrixMultiply(int** a, int** b, int r1, int c1, int r2, int c2) {
 	int i, j, k;
+	
 	int** result = (int**)malloc(sizeof(int*) * r1);
-
 	for (i = 0; i < r1; i++)
 		result[i] = (int*)malloc(sizeof(int) * c2);
 
@@ -30,6 +30,7 @@ int** matrixMultiply(int** a, int** b, int r1, int c1, int r2, int c2) {
 
 int** transposeMatrix(int** a, int r, int c) {
 	int i, j;
+	
 	int** result = (int**)malloc(sizeof(int*) * c);
 	for (i = 0; i < c; i++)
 		result[i] = (int*)malloc(sizeof(int) * r);
