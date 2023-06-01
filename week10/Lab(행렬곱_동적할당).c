@@ -92,6 +92,7 @@ int main(void) {
 	printf("\n전치행렬:\n");
 	printMatrix(transpose, aCol, aRow);
 
+	// 동적 할당 해제
 	for (i = 0; i < aRow; i++)
 		free(A[i]);
 	free(A);
