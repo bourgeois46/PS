@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// version 1
 int comb(int **m, int n, int r) {
 	printf("comb(%d %d)\n", n, r);
 
@@ -9,7 +10,7 @@ int comb(int **m, int n, int r) {
 		return 1;
 
 	else if (n - 1 == r) { // n-1Cr-1 + n-1Cr 특별한 경우 처리
-		if (m[n-1][r] == 0)
+		if (m[n-1][r] == 0) // 계산 X
 			m[n-1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
 
 		return m[n-1][r];
@@ -22,6 +23,17 @@ int comb(int **m, int n, int r) {
 		return m[n-1][r];
 	}
 
+}
+
+// version2
+int comb(int **m, int n, int r) {
+	printf("comb(%d %d)\n", n, r);
+	
+	if( m[i][j] != 0 ) 
+		return m[i][j];
+
+	
+	
 }
 
 int main(void) {
@@ -46,6 +58,7 @@ int main(void) {
 
 	for (i = 0; i < n; i++)
 		free(m[i]);
+	free(m);
 
 	return 0;
 }
