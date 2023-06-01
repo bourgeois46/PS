@@ -65,9 +65,11 @@ int main(void) {
 	
 	for (i = 0; i < r; i++)
 		free(m[i]);
+	free(m);
 
 	for (i = 0; i < r; i++)
 		free(M[i]);
+	free(M);
 
 	return 0;
 }
