@@ -55,7 +55,7 @@ void printMatrix(int** a, int r, int c) {
 
 int main(void) {
 	int** A, ** C;
-	int** result, ** transpose;
+	int** multiplyResult, ** transpose;
 	int aRow, aCol;
 	int cRow, cCol;
 	int i;
@@ -82,13 +82,13 @@ int main(void) {
 	readMatrix(C, cRow, cCol);
 
 	// A와 C의 곱 계산
-	result = matrixMultiply(A, C, aRow, aCol, cRow, cCol);
+	multiplyResult = matrixMultiply(A, C, aRow, aCol, cRow, cCol);
 
 	// A의 전치행렬 계산
 	transpose = transposeMatrix(A, aRow, aCol);
 
 	printf("\n행렬곱:\n");
-	printMatrix(result, aRow, cCol);
+	printMatrix(multiplyResult, aRow, cCol);
 
 	printf("\n전치행렬:\n");
 	printMatrix(transpose, aCol, aRow);
@@ -103,8 +103,8 @@ int main(void) {
 	free(C);
 
 	for (i = 0; i < aRow; i++)
-		free(result[i]);
-	free(result);
+		free(multiplyResult[i]);
+	free(multiplyResult);
 
 	for (i = 0; i < aCol; i++)
 		free(transpose[i]);
