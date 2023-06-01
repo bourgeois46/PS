@@ -9,37 +9,27 @@ int comb(int **m, int n, int r) {
 	if (r == 0 || n == r)
 		return 1;
 
-	else if (n - 1 == r) { // n-1Cr-1 + n-1Cr 특별한 경우 처리
-		if (m[n-1][r] == 0) // 계산 X
-			m[n-1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
-
-		return m[n-1][r];
+	if (m[n - 1][r] == 0) {
+		m[n - 1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
 	}
-
-	else { // 일반적인 조합 계산 처리 // 계산이 안되어 있으면 계산해서 저장
-		if (m[n-1][r] == 0)
-			m[n-1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
-
-		return m[n-1][r];
-	}
+	return m[n - 1][r];
 
 }
 
 // version 2
 int comb(int** m, int n, int r) {
-	if (m[n-1][r] != 0)
+	printf("comb(%d %d)\n", n, r);
+
+	if (m[n-1][r] != 0) // 계산되어있으면 그 값 반환
 		return m[n-1][r];
 
+	// 계산X
 	if (r == 0 || n == r)
 		return 1;
 
-	else if (n - 1 == r) {
-		m[n - 1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
-		return m[n - 1][r];
-	}
-
-	return m[n-1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
+	return m[n - 1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
 }
+
 }
 
 int main(void) {
