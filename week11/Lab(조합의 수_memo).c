@@ -25,15 +25,21 @@ int comb(int **m, int n, int r) {
 
 }
 
-// version2
-int comb(int **m, int n, int r) {
-	printf("comb(%d %d)\n", n, r);
-	
-	if( m[i][j] != 0 ) 
-		return m[i][j];
+// version 2
+int comb(int** m, int n, int r) {
+	if (m[n-1][r] != 0)
+		return m[n-1][r];
 
-	
-	
+	if (r == 0 || n == r)
+		return 1;
+
+	else if (n - 1 == r) {
+		m[n - 1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
+		return m[n - 1][r];
+	}
+
+	return m[n-1][r] = comb(m, n - 1, r - 1) + comb(m, n - 1, r);
+}
 }
 
 int main(void) {
