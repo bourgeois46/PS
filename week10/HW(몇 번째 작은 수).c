@@ -27,11 +27,11 @@ int partition(int* A, int p, int r) { //퀵 정렬의 partition
 
 	while (j < r) {
 		if (A[j] < pivot) {
-			swap(A, ++i, j);//
+			swap(A, ++i, j);
 		}
 		j++;
 	}
-	swap(A, ++i, j);//
+	swap(A, ++i, j);
 
 	return i;
 }
@@ -42,10 +42,8 @@ A[j]가 pivot보다 작을 경우, A[i]의 위치를 증가시키고 A[i]와 A[j
 i의 값을 먼저 증가시킨 후에 swap 함수에 전달되므로 A[i]와 A[j]의 위치를 올바르게 교환할 수 있음. */
 
 int find (int *A, int p, int r, int orderIndex) {
-	int q;
-
 	if (p <= r) {
-		q = partition(A, p, r);
+		int q = partition(A, p, r);
 
 		if (orderIndex == q)
 			return A[orderIndex]; // 찾으면 그 수 반환
@@ -77,6 +75,5 @@ int main(void) {
 	printf("\n%d번째 작은 수는 : %d\n", k, order_num);
 
 	free(A);
-
 	return 0;
 }
