@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// version 1
 int matrixPath_memo(int** m, int r, int c, int i, int j, int** M) {
 	
 	if (i == 0 && j == 0) 
 		return m[0][0];
 	
-	// 맨 윗 행 -> 맨 왼쪽 열인지 확인
+	// 맨 윗 행 -> 맨 왼쪽 열인지 확인 
 	else if (i == 0) { //참인 경우, 현재 위치로 왼쪽에서만 이동할 수 있음
 		if (M[0][j - 1] == 0) // 맨 윗행 & 맨 왼쪽열 -> 왼쪽 요소까지의 최소 경로 합이 계산되지 x
 			M[0][j - 1] = matrixPath_memo(m, r, c, 0, j - 1, M); 
@@ -40,6 +41,35 @@ int matrixPath_memo(int** m, int r, int c, int i, int j, int** M) {
 		return (M[i - 1][j] < M[i][j - 1] ? M[i - 1][j] : M[i][j - 1]) + m[i][j];
 		// 왼쪽 요소까지의 최소 경로 합과 위쪽 요소까지의 최소 경로 합 중 더 작은 값을 선택하고 현재 위치의 요소 값을 더하여 반환
 	}
+	
+// version 2
+int matrixPath_memo(int** m, int r, int c, int i, int j, int** M) {
+	if( M[i][j] != 0 ) // 계산되어있으면 그 값 반환
+		return M[i][j];
+
+	// 계산되어 있지 않음
+	if ( i == 0 && j == 0 )
+		return m[i][j];
+	
+	else if ( i == 0 ) { // 맨 윗행
+		M[i][j] = matrixPath(m,r,c,0,j-1,M)+ m[i][j];
+		return M[i][j];
+        }
+	
+	else if ( j == 0 ) { // 맨 왼쪽행
+		M[i][j] = matrixPath(m,r,c,i-1,0,M)+ m[i][j];
+		return M[i][j];
+        }
+	
+	else { // 맨 윗행, 맨 왼쪽 행 제외
+		int a,b;
+		a = matrixPath(m,r,c,i-1,j,M);
+		b = matrixPath(m,r,c,i,j-1,M);
+		M[i][j]= ((a<b)? a:b) + m[i][j];
+		return M[i][j];
+	}
+}
+
 }
 
 int main(void) {
