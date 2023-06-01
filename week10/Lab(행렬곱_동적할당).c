@@ -12,15 +12,15 @@ void readMatrix(int** a, int r, int c) {
 int** matrixMultiply(int** a, int** b, int r1, int c1, int r2, int c2) {
 	int i, j, k;
 	
-	int** result = (int**)malloc(sizeof(int*) * r1);
+	int** multiplyResult = (int**)malloc(sizeof(int*) * r1);
 	for (i = 0; i < r1; i++)
-		result[i] = (int*)malloc(sizeof(int) * c2);
+		multiplyResult[i] = (int*)malloc(sizeof(int) * c2);
 
 	for (i = 0; i < r1; i++) {
 		for (j = 0; j < c2; j++) {
-			result[i][j] = 0;
+			multiplyResult[i][j] = 0;
 			for (k = 0; k < c1; k++) {
-				result[i][j] += a[i][k] * b[k][j];
+				multiplyResult[i][j] += a[i][k] * b[k][j];
 			}
 		}
 	}
