@@ -63,5 +63,5 @@ int main() {
        free(A);
        free(temp);
 
-	return 0;
+       return 0;
 }
