@@ -41,28 +41,27 @@ void mergeSort(int* A, int p, int r, int* temp) {
 int main() {
 	int* A;
 	int i, n;
-    int* temp;
+        int* temp;
 
 	scanf("%d", &n);
 
 	A = (int*)malloc(sizeof(int) * n);
-    temp = (int*)malloc(sizeof(int) * n);
+       temp = (int*)malloc(sizeof(int) * n);
 
-    srand(time(NULL));
-    for (i = 0; i < n; i++) {//정렬 전
-        A[i] = rand() % 100;
-        printf("%d ", A[i]);
+       srand(time(NULL));
+       for (i = 0; i < n; i++) {//정렬 전
+           A[i] = rand() % 100;
+           printf("%d ", A[i]);
     }
+       mergeSort(A, 0, n-1, temp);
 
-	mergeSort(A, 0, n-1, temp);
+       printf("\n");
+       for (i = 0; i < n; i++)//정렬 후
+           printf("%d ", A[i]);
+       printf("\n");
 
-    printf("\n");
-    for (i = 0; i < n; i++)//정렬 후
-        printf("%d ", A[i]);
-    printf("\n");
-
-    free(A);
-    free(temp);
+       free(A);
+       free(temp);
 
 	return 0;
 }
