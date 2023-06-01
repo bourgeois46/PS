@@ -57,5 +57,8 @@ int main(void) {
 
 	printf("%d\n", matrixPath(m, r, c, 3, 3)); // (3, 3)값
   
-  return 0;
+	for (i = 0; i < r; i++)
+		free(m[i]);
+	free(m);
+        return 0;
 }
