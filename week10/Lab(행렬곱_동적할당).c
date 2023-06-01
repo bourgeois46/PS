@@ -12,20 +12,22 @@ void readMatrix(int** a, int r, int c) {
 int** matrixMultiply(int** a, int** b, int r1, int c1, int r2, int c2) {
 	int i, j, k;
 	
+	// (r1 x c1) x (r2 x c2) = (r1 x c2)
 	int** multiplyResult = (int**)malloc(sizeof(int*) * r1);
 	for (i = 0; i < r1; i++)
 		multiplyResult[i] = (int*)malloc(sizeof(int) * c2);
 
 	for (i = 0; i < r1; i++) {
 		for (j = 0; j < c2; j++) {
-			multiplyResult[i][j] = 0;
-			for (k = 0; k < c1; k++) {
+			multiplyResult[i][j] = 0; // 초기화
+			for (k = 0; k < c1; k++) { // k는 a 행렬의 열을 순회
 				multiplyResult[i][j] += a[i][k] * b[k][j];
 			}
 		}
 	}
 
-	return result;
+
+	return matrixMultiply;
 }
 
 int** transposeMatrix(int** a, int r, int c) {
